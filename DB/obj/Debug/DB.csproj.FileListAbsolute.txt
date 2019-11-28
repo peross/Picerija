@@ -1,0 +1,5 @@
+C:\Users\Admin\documents\visual studio 2013\Projects\Picerija\DB\bin\Debug\DB.dll
+C:\Users\Admin\documents\visual studio 2013\Projects\Picerija\DB\bin\Debug\DB.pdb
+C:\Users\Admin\documents\visual studio 2013\Projects\Picerija\DB\obj\Debug\DB.dll
+C:\Users\Admin\documents\visual studio 2013\Projects\Picerija\DB\obj\Debug\DB.pdb
+C:\Users\Admin\documents\visual studio 2013\Projects\Picerija\DB\obj\Debug\DB.csprojResolveAssemblyReference.cache

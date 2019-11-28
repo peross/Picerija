@@ -1,0 +1,401 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EE9A66D6-7529-45BC-BF78-A76CD8C22B87}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Picerija</RootNamespace>
+    <AssemblyName>Picerija</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=10.9.0.1, Culture=neutral, PublicKeyToken=c39c3242a43eee2b" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forme\Artikli\frmArtikliInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\Artikli\frmArtikliInfo.Designer.cs">
+      <DependentUpon>frmArtikliInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\Artikli\frmUpravljajArtiklima.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\Artikli\frmUpravljajArtiklima.Designer.cs">
+      <DependentUpon>frmUpravljajArtiklima.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\Azuriranje\frmAzuriranje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\Azuriranje\frmAzuriranje.Designer.cs">
+      <DependentUpon>frmAzuriranje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\frmKontrolnaTabla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\frmKontrolnaTabla.Designer.cs">
+      <DependentUpon>frmKontrolnaTabla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\frmOaplikaciji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\frmOaplikaciji.Designer.cs">
+      <DependentUpon>frmOaplikaciji.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\frmPrijava.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\frmPrijava.Designer.cs">
+      <DependentUpon>frmPrijava.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\Izvjestaji\frmIzvjestaji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\Izvjestaji\frmIzvjestaji.Designer.cs">
+      <DependentUpon>frmIzvjestaji.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\Kasa\frmKasa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\Kasa\frmKasa.Designer.cs">
+      <DependentUpon>frmKasa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\Radnici\frmMejl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\Radnici\frmMejl.Designer.cs">
+      <DependentUpon>frmMejl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\Radnici\frmRadniciInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\Radnici\frmRadniciInfo.Designer.cs">
+      <DependentUpon>frmRadniciInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\Radnici\frmUpravljajRadnicima.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\Radnici\frmUpravljajRadnicima.Designer.cs">
+      <DependentUpon>frmUpravljajRadnicima.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\Teme\frmTema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\Teme\frmTema.Designer.cs">
+      <DependentUpon>frmTema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modeli\Artikli\Artikl.cs" />
+    <Compile Include="Modeli\Artikli\ArtikliKorpa.cs" />
+    <Compile Include="Modeli\Izjvestaji\Izjestaj.cs" />
+    <Compile Include="Modeli\Kasa\Korpa.cs" />
+    <Compile Include="Modeli\Kasa\stavkeKorpe.cs" />
+    <Compile Include="Modeli\Radnici\PrijaveRadnika.cs" />
+    <Compile Include="Modeli\Radnici\zaposleniRadnici.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Upotreba\AppOpcije.cs" />
+    <Compile Include="Upotreba\Liste\ListePodaci.cs" />
+    <Compile Include="Upotreba\Liste\Model.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Upotreba\SlikaUpravljanje.cs" />
+    <Compile Include="Upotreba\ToolTipSlika\ToolTipSlika.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Upotreba\ToolTipSlika\ToolTipSlika.Designer.cs">
+      <DependentUpon>ToolTipSlika.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forme\Artikli\frmArtikliInfo.resx">
+      <DependentUpon>frmArtikliInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\Artikli\frmUpravljajArtiklima.resx">
+      <DependentUpon>frmUpravljajArtiklima.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\Azuriranje\frmAzuriranje.resx">
+      <DependentUpon>frmAzuriranje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\frmKontrolnaTabla.resx">
+      <DependentUpon>frmKontrolnaTabla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\frmOaplikaciji.resx">
+      <DependentUpon>frmOaplikaciji.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\frmPrijava.resx">
+      <DependentUpon>frmPrijava.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\Izvjestaji\frmIzvjestaji.resx">
+      <DependentUpon>frmIzvjestaji.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\Kasa\frmKasa.resx">
+      <DependentUpon>frmKasa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\Radnici\frmMejl.resx">
+      <DependentUpon>frmMejl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\Radnici\frmRadniciInfo.resx">
+      <DependentUpon>frmRadniciInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\Radnici\frmUpravljajRadnicima.resx">
+      <DependentUpon>frmUpravljajRadnicima.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\Teme\frmTema.resx">
+      <DependentUpon>frmTema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Upotreba\Liste\Model.dbml.layout">
+      <DependentUpon>Model.dbml</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Upotreba\Liste\Model.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Model.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\partner-66.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Log-Out-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Actions-document-encrypt-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cash-register-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buying_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Conference_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Registration_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pie Chart_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Online Support_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Odjava.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DB\DB.csproj">
+      <Project>{1313c664-3818-478b-8a33-62ac3ef942e6}</Project>
+      <Name>DB</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kuvar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add Image_48px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Remove Image_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no_photo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RestoranBar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pozadina.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buying_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lazanje.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Curetina1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pasta.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pizza specialities.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Junetina1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lazanje1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Meksicka1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pasta1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pizza specialities1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pizza1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pohovana1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Predjela1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prilozi1.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Riba1.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Salate1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Supe i corbe1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Svinjetina1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Piletina.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Predjela2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dezert.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pero.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Network-Download-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Other-Update-Metro-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

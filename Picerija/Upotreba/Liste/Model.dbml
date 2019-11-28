@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Prodaja" Class="ModelDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-IVCH0L3;Initial Catalog=Prodaja;Integrated Security=True" SettingsObjectName="Picerija.Properties.Settings" SettingsPropertyName="ProdajaConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.JedinicaMjere" Member="JedinicaMjeres">
+    <Type Name="JedinicaMjere">
+      <Column Name="SifJM" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Naziv" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="JedinicaMjere_Proizvodi" Member="Proizvodis" ThisKey="SifJM" OtherKey="SifJM" Type="Proizvodi" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Uloge" Member="Uloges">
+    <Type Name="Uloge">
+      <Column Name="IdUloge" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Naziv" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Uloge_Radnici" Member="Radnicis" ThisKey="IdUloge" OtherKey="IdUloge" Type="Radnici" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Korpa" Member="Korpas">
+    <Type Name="Korpa">
+      <Column Name="IdKorpe" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Datum" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="IdRadnika" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Korpa_StavkeKorpe" Member="StavkeKorpes" ThisKey="IdKorpe" OtherKey="IdKorpe" Type="StavkeKorpe" />
+      <Association Name="Radnici_Korpa" Member="Radnici" ThisKey="IdRadnika" OtherKey="IdRadnika" Type="Radnici" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Proizvodi" Member="Proizvodis">
+    <Type Name="Proizvodi">
+      <Column Name="IdProizvoda" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Naziv" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SifJM" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Cijena" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Slika" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Opis" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="Proizvodi_StavkeKorpe" Member="StavkeKorpes" ThisKey="IdProizvoda" OtherKey="IdProizvoda" Type="StavkeKorpe" />
+      <Association Name="JedinicaMjere_Proizvodi" Member="JedinicaMjere" ThisKey="SifJM" OtherKey="SifJM" Type="JedinicaMjere" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Radnici" Member="Radnicis">
+    <Type Name="Radnici">
+      <Column Name="IdRadnika" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Prezime" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Ime" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Telefon" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DatumRodjenja" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="IdUloge" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="KorIme" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="Sifra" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="KreiranDana" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Slika" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="AdresaStanovanja" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TrenutnaPlata" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="PocetnaPlata" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Komentar" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Grad" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Radnici_Korpa" Member="Korpas" ThisKey="IdRadnika" OtherKey="IdRadnika" Type="Korpa" />
+      <Association Name="Uloge_Radnici" Member="Uloge" ThisKey="IdUloge" OtherKey="IdUloge" Type="Uloge" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.StavkeKorpe" Member="StavkeKorpes">
+    <Type Name="StavkeKorpe">
+      <Column Name="IdStavkeKorpe" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdProizvoda" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdKorpe" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Kolicina" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Association Name="Korpa_StavkeKorpe" Member="Korpa" ThisKey="IdKorpe" OtherKey="IdKorpe" Type="Korpa" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Proizvodi_StavkeKorpe" Member="Proizvodi" ThisKey="IdProizvoda" OtherKey="IdProizvoda" Type="Proizvodi" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Kategorije" Member="Kategorijes">
+    <Type Name="Kategorije">
+      <Column Name="IdKategorije" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NazivKategorije" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="dbo.vratiListeNaOsnovuId" Method="vratiListeNaOsnovuId">
+    <Parameter Name="SifJM" Parameter="sifJM" Type="System.Int32" DbType="Int" />
+    <ElementType Name="vratiListeNaOsnovuIdResult">
+      <Column Name="IdProizvoda" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Naziv" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SifJM" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Cijena" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Slika" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="Opis" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.vratiPodatkeUloga" Method="vratiPodatkeUloga">
+    <Parameter Name="IdUloge" Parameter="idUloge" Type="System.Int32" DbType="Int" />
+    <ElementType Name="vratiPodatkeUlogaResult">
+      <Column Name="IdUloge" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Naziv" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.kategorijeLista" Method="kategorijeLista">
+    <Parameter Name="IdKategorije" Parameter="idKategorije" Type="System.Int32" DbType="Int" />
+    <ElementType Name="kategorijeListaResult">
+      <Column Name="IdKategorije" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NazivKategorije" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>
